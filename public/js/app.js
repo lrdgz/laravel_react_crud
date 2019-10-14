@@ -55612,6 +55612,120 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Category/Edit.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/Category/Edit.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Edit =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Edit, _Component);
+
+  function Edit(props) {
+    var _this;
+
+    _classCallCheck(this, Edit);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Edit).call(this, props));
+    _this.state = {
+      category_name: '',
+      category_id: ''
+    };
+    _this.onChangeCategoryName = _this.onChangeCategoryName.bind(_assertThisInitialized(_this));
+    _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Edit, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://laravel.react.test/api/category/' + this.props.match.params.id).then(function (response) {
+        _this2.setState({
+          category_name: response.data.name,
+          category_id: response.data.id
+        });
+
+        console.log(response.data);
+      });
+    }
+  }, {
+    key: "onChangeCategoryName",
+    value: function onChangeCategoryName(e) {
+      this.setState({
+        category_name: e.target.value
+      });
+    }
+  }, {
+    key: "onSubmit",
+    value: function onSubmit(e) {
+      e.preventDefault();
+      var category = {
+        category_name: this.state.category_name
+      };
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.put('http://laravel.react.test/api/category/' + this.props.match.params.id, category).then(function (result) {
+        console.log(result.data);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.onSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Category Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "form-control",
+        placeholder: "Enter Category",
+        value: this.state.category_name,
+        onChange: this.onChangeCategoryName
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
+        className: "btn btn-primary"
+      }, "Submit")));
+    }
+  }]);
+
+  return Edit;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Category/Index.js":
 /*!***************************************************!*\
   !*** ./resources/js/components/Category/Index.js ***!
@@ -55621,12 +55735,13 @@ function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return About; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _Add__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Add */ "./resources/js/components/Category/Add.js");
-/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Listing */ "./resources/js/components/Category/Listing.js");
+/* harmony import */ var _Edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Edit */ "./resources/js/components/Category/Edit.js");
+/* harmony import */ var _Listing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Listing */ "./resources/js/components/Category/Listing.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -55650,18 +55765,19 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var About =
+
+var Index =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(About, _Component);
+  _inherits(Index, _Component);
 
-  function About() {
-    _classCallCheck(this, About);
+  function Index() {
+    _classCallCheck(this, Index);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(About).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Index).apply(this, arguments));
   }
 
-  _createClass(About, [{
+  _createClass(Index, [{
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -55673,16 +55789,20 @@ function (_Component) {
       }, "Add "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         exact: true,
         path: "/category",
-        component: _Listing__WEBPACK_IMPORTED_MODULE_3__["default"]
+        component: _Listing__WEBPACK_IMPORTED_MODULE_4__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         exact: true,
         path: "/category/add",
         component: _Add__WEBPACK_IMPORTED_MODULE_2__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
+        path: "/category/edit/:id",
+        component: _Edit__WEBPACK_IMPORTED_MODULE_3__["default"]
       }))));
     }
   }]);
 
-  return About;
+  return Index;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 
@@ -55703,6 +55823,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -55720,6 +55841,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -55746,21 +55868,51 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://laravel.react.test/api/category').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://laravel.react.test/api/category/').then(function (response) {
         _this2.setState({
           categories: response.data
         });
       });
     }
   }, {
+    key: "onDelete",
+    value: function onDelete(category_id) {
+      var _this3 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]('http://laravel.react.test/api/category/' + category_id).then(function (response) {
+        console.log('Category Id: ', category_id);
+        console.log(response.data);
+        var categories = _this3.state.categories;
+        console.log('Length : ', categories.length);
+
+        for (var i = 0; i < categories.length; i++) {
+          if (categories[i].id == category_id) {
+            console.log('SI ENCONTRADO Y ELIMINADO!');
+            categories.splice(i, 1);
+
+            _this3.setState({
+              categories: categories
+            });
+          }
+        }
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "table"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "#"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Category Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Status"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Created At"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Updated At"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.categories.map(function (category) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "#"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Category Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Status"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Created At"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Updated At"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.categories.map(function (category) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           key: category.id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.active == 1 ? 'Active' : 'Inactive'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.created_at), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.updated_at));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.active == 1 ? 'Active' : 'Inactive'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.created_at), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.updated_at), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          to: "/category/edit/".concat(category.id)
+        }, "Edit"), " |", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#",
+          onClick: _this4.onDelete.bind(_this4, category.id)
+        }, "Delete")));
       }))));
     }
   }]);

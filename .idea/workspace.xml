@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76464335-e50e-4b48-b925-06629ee6e166" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Header.js" afterDir="false" />
-    </list>
+    <list default="true" id="76464335-e50e-4b48-b925-06629ee6e166" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,9 +121,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1879" />
+    <option name="x" value="1272" />
     <option name="y" value="-8" />
-    <option name="width" value="340" />
+    <option name="width" value="1296" />
     <option name="height" value="1010" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -142,24 +138,6 @@
             <path>
               <item name="laravel.react" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel.react" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel.react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel.react" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel.react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel.react" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel.react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel.react" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -212,16 +190,15 @@
       <option name="presentableId" value="Default" />
       <updated>1570807919037</updated>
       <workItem from="1570807920564" duration="110000" />
-      <workItem from="1570808539929" duration="3706000" />
+      <workItem from="1570808539929" duration="3712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3816000" />
+    <option name="totallyTimeSpent" value="3822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1272" y="-8" width="1296" height="1010" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2540453" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
